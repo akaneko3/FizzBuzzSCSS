@@ -1,0 +1,43 @@
+@import 'function';
+
+%font-style {
+  font: {
+    size: large;
+    weight: bold;
+  }
+}
+
+@mixin fizzbuzz($fizz-color: red, $buzz-color: blue, $fizz: 3, $buzz: 5) {
+  li {
+    @extend %font-style;
+
+    &:nth-child(#{$fizz}n) {
+      color: $fizz-color;
+      font-size: 0;
+
+      &::before {
+        @extend %font-style;
+        content: 'Fizz';
+      }
+    }
+
+    &:nth-child(#{$buzz}n) {
+      color: $buzz-color;
+      font-size: 0;
+
+      &::after {
+        @extend %font-style;
+        content: 'Buzz';
+      }
+    }
+
+    &:nth-child(#{lcm($fizz, $buzz)}n) {
+      color: mix($fizz-color, $buzz-color, 50%);
+    }
+  }
+}
+
+ul {
+  @include fizzbuzz;
+  list-style-type: none;
+}

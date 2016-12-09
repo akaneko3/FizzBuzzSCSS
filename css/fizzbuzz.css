@@ -1,0 +1,32 @@
+/* line 3, ../sass/fizzbuzz.scss */
+ul li, ul li:nth-child(3n)::before, ul li:nth-child(5n)::after {
+  font-size: large;
+  font-weight: bold;
+}
+
+/* line 40, ../sass/fizzbuzz.scss */
+ul {
+  list-style-type: none;
+}
+/* line 14, ../sass/fizzbuzz.scss */
+ul li:nth-child(3n) {
+  color: red;
+  font-size: 0;
+}
+/* line 18, ../sass/fizzbuzz.scss */
+ul li:nth-child(3n)::before {
+  content: 'Fizz';
+}
+/* line 24, ../sass/fizzbuzz.scss */
+ul li:nth-child(5n) {
+  color: blue;
+  font-size: 0;
+}
+/* line 28, ../sass/fizzbuzz.scss */
+ul li:nth-child(5n)::after {
+  content: 'Buzz';
+}
+/* line 34, ../sass/fizzbuzz.scss */
+ul li:nth-child(15n) {
+  color: purple;
+}
