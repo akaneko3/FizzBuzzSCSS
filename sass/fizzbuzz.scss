@@ -1,6 +1,6 @@
 @import 'function';
 
-%font-style {
+%font {
   font: {
     size: large;
     weight: bold;
@@ -9,14 +9,14 @@
 
 @mixin fizzbuzz($fizz-color: red, $buzz-color: blue, $fizz: 3, $buzz: 5) {
   li {
-    @extend %font-style;
+    @extend %font;
 
     &:nth-child(#{$fizz}n) {
       color: $fizz-color;
       font-size: 0;
 
       &::before {
-        @extend %font-style;
+        @extend %font;
         content: 'Fizz';
       }
     }
@@ -26,7 +26,7 @@
       font-size: 0;
 
       &::after {
-        @extend %font-style;
+        @extend %font;
         content: 'Buzz';
       }
     }
